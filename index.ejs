@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en-US" data-ng-app="vokal">
+
+	<head>
+
+		<meta charset="utf-8">
+		<title>Vokal Web Application</title>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0, width=device-width, minimal-ui">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<link rel="stylesheet" href="<%= STATIC_PATH %>build/base.css">
+		<link rel="stylesheet" href="<%= STATIC_PATH %>build/project.css">
+		<base href="/">
+	</head>
+	
+	<body data-ng-controller="Site">
+	
+		<header>
+			Vokal Web Application
+		</header>
+		
+		<main data-ng-view></main>
+		
+		<footer>
+			Copyright
+		</footer>
+
+		<script>
+			var STATIC_PATH = "<%= STATIC_PATH %>";
+		</script>
+
+		<script src="<%= STATIC_PATH %>build/jquery.js"></script>
+		<script src="<%= STATIC_PATH %>build/angular.js"></script>
+		<script src="<%= STATIC_PATH %>build/project.js"></script>
+
+	</body>
+	
+</html>
