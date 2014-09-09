@@ -19,6 +19,9 @@ svcMod.service( "Session", ["localStorageService", "$rootScope", "$location", "$
         localStorageService.set( "user.phone_number", user.phone_number );
         localStorageService.set( "user.email", user.email );
         localStorageService.set( "user.role", user.role );
+
+        // Redirect to list on session create
+        $location.path( "/list" );
     };
 
     this.get = {

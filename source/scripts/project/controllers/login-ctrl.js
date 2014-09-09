@@ -25,6 +25,7 @@ angMod.controller( "LoginCtrl", [ "$scope", "$rootScope", "$location", "API", "U
         //     console.log ( data );
         // });
 
+        // Flow Placeholder, remove for above
         var user = {
             auth_token: "kjlwkejwdcWEwelkj",
             role_id: "14",
@@ -34,8 +35,6 @@ angMod.controller( "LoginCtrl", [ "$scope", "$rootScope", "$location", "API", "U
         };
 
         Session.create( user );
-
-        $location.path( "/list" );
     };
 
     $scope.showResetPasswordForm = function () {
@@ -44,7 +43,11 @@ angMod.controller( "LoginCtrl", [ "$scope", "$rootScope", "$location", "API", "U
     };
 
     $scope.sendResetPasswordEmail = function ( user ) {
-        $http.post( UrlHelper.customer.resetPassword(), { email: user.email })
+        API.$post( UrlHelper.customer.resetPassword(),
+            {
+                email: user.email
+            }
+        )
         .success( function () {
             // TODO: Show messaging: "Please check your email" or something.
             $scope.resetPasswordVisible = false;
