@@ -1,0 +1,47 @@
+<h2>Add New Item</h2>
+
+<form id="add-item" name="add-item" data-ng-submit="addNewItem(newItem);closeThisDialog();">
+
+    <h3>Individual Fields</h3>
+
+    <label for="name">
+        <span>Name</span>
+       <input type="text" id="name" name="name" data-ng-model="newItem.name" required>
+    </label>
+
+    <label for="email">
+        <span>Email</span>
+        <input type="email" id="email" name="email" data-ng-model="newItem.email" required>
+    </label>
+
+    <label for="phone">
+        <span>Phone</span>
+        <input type="text" id="phone" name="phone" ui-mask="(999)999-9999" data-ng-model="newItem.phoneNumber" required>
+    </label>
+
+    <label for="address-street">
+        <span>Street Address</span>
+        <input type="text" id="address-street" name="address-street" data-ng-model="newItem.address.street" required>
+    </label>
+
+    <label for="address-city">
+        <span>City</span>
+        <input type="text" id="address-city" name="address-city" data-ng-model="newItem.address.city" required>
+    </label>
+
+    <label for="address-state">
+        <span>State</span>
+        <input type="text" id="address-state" name="address-state" data-ng-model="newItem.address.state" required>
+    </label>
+
+    <label for="address-postal-code">
+        <span>Postal Code</span>
+        <input type="text" id="address-postal-code" name="address-postal-code" ui-mask="99999" data-ng-model="newItem.address.postalCode" required>
+    </label>
+
+
+    <div class="form-controls clearfix">
+        <button type="button" class="btn btn-default" data-ng-click="closeThisDialog(null)">Cancel</button>
+        <button id="add-item-submit" type="submit" class="btn btn-primary">Save and exit</button>
+    </div>
+</form>

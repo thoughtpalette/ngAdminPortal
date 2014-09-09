@@ -3,7 +3,7 @@
 <html lang="en-US" data-ng-app="vokal">
 
 	<head>
-
+		<base href="/">
 		<meta charset="utf-8">
 		<title>Vokal Web Application</title>
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0, width=device-width, minimal-ui">
@@ -11,20 +11,12 @@
 
 		<link rel="stylesheet" href="<%= STATIC_PATH %>build/base.css">
 		<link rel="stylesheet" href="<%= STATIC_PATH %>build/project.css">
-		<base href="/">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	</head>
-	
-	<body data-ng-controller="Site">
-	
-		<header>
-			Vokal Web Application
-		</header>
-		
+
+	<body data-ng-controller="Site" class="{{controller}}">
+
 		<main data-ng-view></main>
-		
-		<footer>
-			Copyright
-		</footer>
 
 		<script>
 			var STATIC_PATH = "<%= STATIC_PATH %>";
@@ -32,8 +24,12 @@
 
 		<script src="<%= STATIC_PATH %>build/jquery.js"></script>
 		<script src="<%= STATIC_PATH %>build/angular.js"></script>
+		<script src="<%= STATIC_PATH %>build/angular-table.js"></script>
+		<script src="<%= STATIC_PATH %>build/ng-dialog.min.js"></script>
+		<script src="<%= STATIC_PATH %>build/angular-mask.js"></script>
+		<script src="<%= STATIC_PATH %>build/angular-local-storage.js"></script>
 		<script src="<%= STATIC_PATH %>build/project.js"></script>
 
 	</body>
-	
+
 </html>
