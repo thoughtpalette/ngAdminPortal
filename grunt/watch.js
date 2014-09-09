@@ -7,9 +7,9 @@ module.exports = {
 	scripts:
 	{
 		files: [
-			"source/scripts/project/*"
+			"source/scripts/project/**/*"
 		],
-		tasks: [ "concat:scripts" ]
+		tasks: [ "concat:scripts", "replace" ]
 	},
 	styles:
 	{

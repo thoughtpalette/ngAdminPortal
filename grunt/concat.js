@@ -2,7 +2,7 @@ module.exports = {
 	scripts:
 	{
 		src: [
-			"source/scripts/project/*"
+			"source/scripts/project/**/*"
 		],
 		dest: "build/project.js"
 	},
@@ -25,11 +25,40 @@ module.exports = {
 		],
 		dest: "build/angular.js"
 	},
+	angularTable:
+	{
+		src: [
+			"source/components/at-table/dist/angular-table.js"
+		],
+		dest: "build/angular-table.js"
+	},
+	angularDialog:
+	{
+		src: [
+			"source/components/ngDialog/js/ngDialog.min.js"
+		],
+		dest: "build/ng-dialog.min.js"
+	},
+    angularMask:
+    {
+        src: [
+            "source/components/angular-ui-utils/mask.min.js"
+        ],
+        dest: "build/angular-mask.js"
+    },
+    ngLocalStorage: {
+        src: [
+            "source/components/angular-local-storage/angular-local-storage.js"
+        ],
+        dest: "build/angular-local-storage.js"
+    },
 	styles:
 	{
 		src: [
 			"source/styles/library/reset.css",
-			"source/styles/library/vokal.css"
+			"source/styles/library/vokal.css",
+			"source/components/ngDialog/css/ngDialog.min.css",
+			"source/components/ngDialog/css/ngDialog-theme-default.css"
 		],
 		dest: "build/base.css"
 	}

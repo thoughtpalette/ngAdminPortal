@@ -1,0 +1,8 @@
+image: docker.vokalinteractive.com/web-admin-seed
+services:
+        - postgres
+script:
+        - createdb -h localhost -U postgres parche
+        - pip install -r requirements.txt
+        # - cd parche
+        # - python manage.py test

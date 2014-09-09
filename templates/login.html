@@ -1,0 +1,36 @@
+<div class="row-container">
+    <div class="row login">
+        <h2>Login to Admin</h2>
+
+        <form id="login" role="form" data-ng-submit="login(credentials)" data-ng-hide="userResetPassword">
+            <div class="form-group">
+                <label for="user-name">Email:</label>
+                <input id="user-name" class="form-control" type="email" name="username" data-ng-model="credentials.email" placeholder="Please enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="user-password">Password:</label>
+                <input id="user-password" class="form-control" type="password" name="password" data-ng-model="credentials.password" placeholder="Please enter your password" required>
+            </div>
+
+            <button id="login-btn" class="btn btn-primary" type="submit">Login</button>
+            <a href="" data-ng-click="showResetPasswordForm()" data-ng-hide="userResetPassword">Did you forget your password?</a>
+        </form>
+
+        <form role="form" data-ng-submit="sendResetPasswordEmail(user)" data-ng-show="resetPasswordVisible">
+            <div class="form-group">
+                <label for="user-email">Please enter your email address.</label>
+                <input id="user-email" class="form-control" type="email" data-ng-model="user.email" placeholder="Please enter your email" required>
+            </div>
+
+            <button class="btn btn-primary" type="submit">send reset email</button>
+
+            <button class="btn btn-default" type="button" data-ng-click="userResetPassword = false;resetPasswordVisible = false;">cancel</button>
+        </form>
+
+        <div data-ng-show="emailSent">
+            <p>Please check your email for instructions on resetting your password.</p>
+        </div>
+
+    </div>
+</div>
