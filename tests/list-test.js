@@ -165,15 +165,15 @@ describe( "List View", function ()
     it( "Delete Item", function ()
     {
         var deleteButton = element( by.id( "delete-btn" ) ),
-            companyRow = element( by.css( ".row-1" ) ),
-            companyId = companyRow.getAttribute( "id" ),
-            deletedCompany = element( by.id ( companyId ) );
+            row = element( by.css( ".row-1" ) ),
+            rowId = row.getAttribute( "id" ),
+            listItem = element( by.id ( rowId ) );
 
             deleteButton.click();
 
             ptor.sleep(2000);
 
-            expect( deletedCompany.isPresent()).toBe( false );
+            expect( listItem.isPresent()).toBe( false );
     } );
 
 } );
