@@ -1,7 +1,21 @@
-FROM dockerfile/nodejs
-
-RUN mkdir /webapp_root
-ADD . /webapp_root/
-WORKDIR /webapp_root
-
-EXPOSE 3000
+image: docker.vokalinteractive.com/web-admin-seed
+env:
+        # - AWS_ACCESS_KEY_ID={{awsAccessKey}}
+        # - AWS_SECRET_ACCESS_KEY={{awsSecretKey}}
+        # - STAGING_DATABASE_URL={{stagingDatabaseUrl}}
+        # - DATABASE_URL=postgres://postgres@localhost/parche
+        # - BRAINTREE_ENVIRONMENT=Sandbox
+        # - BRAINTREE_MERCHANT_ID={{braintreeMerchantID}}
+        # - BRAINTREE_PUBLIC_KEY={{braintreePublicKey}}
+        # - BRAINTREE_PRIVATE_KEY={{braintreePrivateKey}}
+services:
+        - postgres
+script:
+        - createdb -h localhost -U postgres parche
+        - pip install -r requirements.txt
+        # - cd parche
+        # - python manage.py test
+deploy:
+    bash:
+        script:
+            - fab staging update create_image
