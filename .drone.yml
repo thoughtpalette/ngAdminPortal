@@ -1,13 +1,4 @@
-image: docker.vokalinteractive.com/parche-backend
-env:
-        # - AWS_ACCESS_KEY_ID={{awsAccessKey}}
-        # - AWS_SECRET_ACCESS_KEY={{awsSecretKey}}
-        # - STAGING_DATABASE_URL={{stagingDatabaseUrl}}
-        # - DATABASE_URL=postgres://postgres@localhost/parche
-        # - BRAINTREE_ENVIRONMENT=Sandbox
-        # - BRAINTREE_MERCHANT_ID={{braintreeMerchantID}}
-        # - BRAINTREE_PUBLIC_KEY={{braintreePublicKey}}
-        # - BRAINTREE_PRIVATE_KEY={{braintreePrivateKey}}
+image: docker.vokalinteractive.com/web-admin-seed
 services:
         - postgres
 script:
@@ -15,7 +6,3 @@ script:
         - pip install -r requirements.txt
         # - cd parche
         # - python manage.py test
-deploy:
-    bash:
-        script:
-            - fab staging update
