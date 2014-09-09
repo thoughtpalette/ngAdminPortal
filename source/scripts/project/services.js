@@ -99,7 +99,7 @@ svcMod.factory( "API", [ "$http", "$rootScope", "$location", "$q", "Session",
 			var headers = { "AUTHORIZATION": "Token " + Session.get.authToken() };
 			var options = { method: method, url: path, headers: headers, data: requestData || {} };
 
-			if( method == "postFile" )
+			if( method === "postFile" )
 			{
 				headers[ "Content-Type" ] = undefined;  // To ensure multipart boundary is added
 				options.method            = "post";
