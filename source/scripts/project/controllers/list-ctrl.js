@@ -1,6 +1,7 @@
 angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", "UrlHelper", "API",
     function ( $scope, $rootScope, $filter, ngDialog, UrlHelper, API )
     {
+
         // angular-table config
         $scope.config = {
             itemsPerPage: 8,
@@ -11,8 +12,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
 
         $scope.getList = function () {
             API.$get( UrlHelper.company.getList(), { } )
-            .success( function ( data )
-                // Set Table data here
+            .success( function ( data ) {
                 $scope.list = data.results;
                 $scope.updateFilteredList();
             })
@@ -45,7 +45,6 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
         };
 
         $scope.updateItem = function ( item ) {
-
                 API.$put( UrlHelper.company.update() + item.id,
                     {
                         // Fields unknown for now
