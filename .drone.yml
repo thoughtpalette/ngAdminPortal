@@ -1,4 +1,4 @@
-image: docker.vokalinteractive.com/web-admin-seed
+image: docker.vokalinteractive.com/parche-backend
 env:
         # - AWS_ACCESS_KEY_ID={{awsAccessKey}}
         # - AWS_SECRET_ACCESS_KEY={{awsSecretKey}}
@@ -18,4 +18,4 @@ script:
 deploy:
     bash:
         script:
-            - fab staging update create_image
+            - fab staging update
