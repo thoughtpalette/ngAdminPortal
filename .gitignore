@@ -1,0 +1,8 @@
+node_modules
+/source/components
+/build/**
+!/build/README.md
+.vagrant
+.DS_Store
+npm-debug.log
+build/
