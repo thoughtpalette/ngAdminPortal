@@ -10,13 +10,16 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
 
         $scope.list = [];
 
-        $scope.getList = function () {
-            API.$get( UrlHelper.company.getList(), { } )
-            .success( function ( data ) {
+        $scope.getList = function ()
+        {
+            API.$get( UrlHelper.company.getList() )
+            .success( function ( data )
+            {
                 $scope.list = data.results;
                 $scope.updateFilteredList();
             })
-            .error( function ( data ) {
+            .error( function ( data )
+            {
                 toastr.error( "Oops, there was an issue retrieving list", "Error" );
             });
         };
@@ -28,11 +31,13 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
 
         $scope.filteredList = $scope.originalList;
 
-        $scope.updateFilteredList = function() {
+        $scope.updateFilteredList = function()
+        {
             $scope.filteredList = $filter( "filter" )( $scope.list, $scope.query );
         };
 
-        $scope.openEditForm = function ( item ) {
+        $scope.openEditForm = function ( item )
+        {
             $scope.item = item;
 
             ngDialog.open(
@@ -44,35 +49,34 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
             );
         };
 
-        $scope.updateItem = function ( item ) {
-                API.$put( UrlHelper.company.update() + item.id,
-                    {
-                        // Fields unknown for now
-                    }
-                )
-                .success( function ( data ) {
-                    $scope.getList();
-                })
-                .error( function ( data ) {
-                    toastr.error( "Oops, there was a problem updating the item", "Error" );
-                });
-        };
-
-        $scope.addNewItem = function ( item ) {
-            API.$post( UrlHelper.company.create(),
-                {
-                    // Fields unknown for now
-                }
-            )
-            .success( function ( data ) {
+        $scope.updateItem = function ( item )
+        {
+            API.$put( UrlHelper.company.update() + item.id, item )
+            .success( function ( data )
+            {
                 $scope.getList();
             })
-            .error( function ( data ) {
+            .error( function ( data )
+            {
+                toastr.error( "Oops, there was a problem updating the item", "Error" );
+            });
+        };
+
+        $scope.addNewItem = function ( item )
+        {
+            API.$post( UrlHelper.company.create(), item )
+            .success( function ( data )
+            {
+                $scope.getList();
+            })
+            .error( function ( data )
+            {
                 toastr.error( "Oops, there was an issue creating the item", "Error" );
             });
         };
 
-        $scope.addNewItemForm = function () {
+        $scope.addNewItemForm = function ()
+        {
             ngDialog.open(
                 {
                     template: "templates/partials/new-list-item.html",
@@ -82,21 +86,27 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
             );
         };
 
-        $scope.openDeleteModal = function ( item ) {
+        $scope.openDeleteModal = function ( item )
+        {
             $scope.item = item;
 
-            var dialog = ngDialog.open({
-                template: "templates/partials/confirm-delete.html",
-                scope: $scope
-            });
+            var dialog = ngDialog.open(
+                {
+                    template: "templates/partials/confirm-delete.html",
+                    scope: $scope
+                }
+            );
         };
 
-        $scope.deleteItem = function ( item ) {
+        $scope.deleteItem = function ( item )
+        {
             API.$delete( UrlHelper.company.delete() + item.id )
-            .success( function ( data ) {
+            .success( function ( data )
+            {
                 $scope.getList();
             })
-            .error( function ( data ) {
+            .error( function ( data )
+            {
                 toastr.error( "Oops, There was an issue deleting the item", "Error" );
             });
         };

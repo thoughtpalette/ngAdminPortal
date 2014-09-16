@@ -37,24 +37,28 @@ angMod.controller( "LoginCtrl", [ "$scope", "$rootScope", "$location", "API", "U
         Session.create( user );
     };
 
-    $scope.showResetPasswordForm = function () {
+    $scope.showResetPasswordForm = function ()
+    {
         $scope.userResetPassword = true;
         $scope.resetPasswordVisible = true;
     };
 
-    $scope.sendResetPasswordEmail = function ( user ) {
+    $scope.sendResetPasswordEmail = function ( user )
+    {
         API.$post( UrlHelper.customer.resetPassword(),
             {
                 email: user.email
             }
         )
-        .success( function () {
+        .success( function ()
+        {
             // TODO: Show messaging: "Please check your email" or something.
             $scope.resetPasswordVisible = false;
             $scope.emailSent = true;
         })
-        .error( function () {
-            console.warn( "Oops, Something went wrong, please try again." );
+        .error( function ()
+        {
+            toastr.error( "Oops, Something went wrong, please try again.", "Error" );
         });
     };
 
