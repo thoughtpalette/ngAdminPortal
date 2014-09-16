@@ -17,7 +17,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
                 $scope.updateFilteredList();
             })
             .error( function ( data ) {
-                console.warn( "Oops, there was an issue retrieving list" );
+                toastr.error( "Oops, there was an issue retrieving list", "Error" );
             });
         };
 
@@ -54,7 +54,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
                     $scope.getList();
                 })
                 .error( function ( data ) {
-                    console.warn( "Oops, there was a problem updating the item" );
+                    toastr.error( "Oops, there was a problem updating the item", "Error" );
                 });
         };
 
@@ -68,7 +68,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
                 $scope.getList();
             })
             .error( function ( data ) {
-                console.warn( "Oops, there was an issue creating the item" );
+                toastr.error( "Oops, there was an issue creating the item", "Error" );
             });
         };
 
@@ -97,12 +97,12 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
                 $scope.getList();
             })
             .error( function ( data ) {
-                console.warn( "Oops, There was an issue deleting the item" );
+                toastr.error( "Oops, There was an issue deleting the item", "Error" );
             });
         };
 
         // Run on Load
-        $scope.getList();
+        // $scope.getList();
     }
 
 ] );
