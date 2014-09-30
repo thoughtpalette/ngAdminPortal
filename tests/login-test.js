@@ -4,16 +4,13 @@
 
 var ptor = protractor.getInstance();
 
-ptor.waitForAngular();
-
 describe( "Login", function ()
 {
 
       it( "Start Login Process", function ()
       {
-            ptor.driver.get( "/" );
-
-            ptor.sleep( 10000 );
+            browser.get( "/" );
+            browser.waitForAngular();
 
         var inputUserName = element( by.id( "user-name" ) ),
             inputPassword = element( by.id( "user-password" ) ),
