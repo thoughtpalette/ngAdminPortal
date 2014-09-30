@@ -7,10 +7,20 @@ exports.config = {
 
 	// Capabilities to be passed to the webdriver instance.
 	capabilities: {
-		"browserName": "chrome"
+		"browserName": "phantomjs"
 	},
 
 	baseUrl: 'http://localhost:3000',
+
+	rootElement: 'html',
+
+	onPrepare: function () {
+		browser.driver.manage().window().setSize(1600, 800);
+	},
+
+	files: [
+		"build/angular.js"
+	],
 
 	// Spec patterns are relative to the current working directly when protractor is called.
 	specs: [
