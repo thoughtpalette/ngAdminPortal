@@ -18,8 +18,6 @@ exports.config = {
 		browser.driver.manage().window().setSize(1600, 800);
 	},
 
-	allScriptsTimeout: 30000,
-
 	files: [
 		"build/angular.js"
 	],
@@ -32,7 +30,6 @@ exports.config = {
 
 	// Options to be passed to Jasmine-node.
 	jasmineNodeOpts: {
-	    onComplete: function () {},
 	    // If true, display spec names.
 	    isVerbose: true,
 	    // If true, print colors to the terminal.

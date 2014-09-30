@@ -3,7 +3,7 @@ script:
 script:
    - npm install
    - npm install -g protractor@1.3.1
-   - npm install -g phantomjs@1.9.10
+   - npm install -g chromedriver
    - webdriver-manager update
    - webdriver-manager start &
    - sleep 5
