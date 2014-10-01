@@ -8,7 +8,5 @@ deploy:
   - jshint
   - uglify
   - replace
-  - concat:jquery
-  - concat:angular
-  - concat:styles
+  - concat
   - less:deploy

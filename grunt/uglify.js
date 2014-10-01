@@ -12,7 +12,7 @@ module.exports = {
 		files:
 		{
 			"build/project.js": [
-				"source/scripts/project/*"
+				"source/scripts/project/*.js"
 			]
 		}
 	}
