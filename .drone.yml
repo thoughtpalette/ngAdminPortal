@@ -3,6 +3,7 @@ script:
 #    - chmod -R a+x node_modules
     - npm rebuild
     - npm install
+    - npm install -g grunt
     - npm install -g bower
     - bower install
     - grunt deploy
