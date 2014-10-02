@@ -15,10 +15,13 @@ script:
     - grunt deploy
     - export DISPLAY=:10
     - Xvfb :10 -screen 0 1366x768x24 -ac &
+    - sleep 2
     - google-chrome --remote-debugging-port=9222 &
+    - sleep 2
     - start-selenium &
+    - sleep 2
     - node server &
-    - sleep 5
+    - sleep 2
     - protractor protractor.js
 notify:
     email:
