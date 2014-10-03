@@ -5,7 +5,3 @@ script:
     - bower --allow-root install
     - grunt deploy
     - ./run-build.sh
-notify:
-    email:
-        recipients:
-            - jarrett.widman@vokalinteractive.com
