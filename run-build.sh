@@ -20,9 +20,13 @@ sleep 2
 
 protractor protractor.js
 
+RESULT=$?
+
 for i in "${PIDS[@]}"
 do
     if ! kill $i > /dev/null 2>&1; then
         echo "SIGTERM fail on process $i" >&2
     fi
 done
+
+exit $RESULT
