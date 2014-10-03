@@ -1,4 +1,4 @@
-image: bradrydzewski/node:0.10
+image: docker.vokalinteractive.com/node
 script:
 #    - chmod -R a+x node_modules
     - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -16,7 +16,7 @@ script:
     - export DISPLAY=:10
     - Xvfb :10 -screen 0 1366x768x24 -ac &
     - sleep 2
-    - sudo google-chrome --remote-debugging-port=9222 &
+    - google-chrome --remote-debugging-port=9222 &
     - sleep 2
     - start-selenium &
     - sleep 2
