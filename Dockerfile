@@ -1,7 +1,5 @@
-FROM dockerfile/nodejs
+FROM docker.vokalinteractive.com/node-testing
 
-RUN mkdir /webapp_root
-ADD . /webapp_root/
-WORKDIR /webapp_root
+USER testing
 
 EXPOSE 3000
