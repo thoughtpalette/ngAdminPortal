@@ -1,8 +1,7 @@
-image: docker.vokalinteractive.com/web-admin-seed
-services:
-        - postgres
+image: docker.vokalinteractive.com/node-testing
 script:
-        - createdb -h localhost -U postgres parche
-        - pip install -r requirements.txt
-        # - cd parche
-        # - python manage.py test
+    - npm rebuild
+    - npm install
+    - bower --allow-root install
+    - grunt deploy
+    - ./run-build.sh

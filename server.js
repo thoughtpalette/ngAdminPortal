@@ -13,4 +13,6 @@ var serveIndex = function ( req, res, next )
 
 app.route( "*" ).get( serveIndex );
 
-http.createServer( app ).listen( process.env.PORT || 3000 );
+var port = process.env.PORT || 3000;
+http.createServer( app ).listen( port );
+console.log( "Express listening on " + port )
