@@ -1,4 +1,4 @@
-image: docker.vokalinteractive.com/node
+image: bradrydzewski/node:0.10
 script:
 #    - chmod -R a+x node_modules
     - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
