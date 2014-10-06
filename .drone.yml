@@ -1,16 +1,7 @@
-image: bradrydzewski/node:0.10
+image: docker.vokalinteractive.com/node-testing
 script:
-script:
-   - npm install
-   - npm install -g protractor@1.3.1
-   - npm install -g chromedriver
-   - webdriver-manager update
-   - webdriver-manager start &
-   - sleep 5
-   - npm start &
-   - sleep 5
-   - protractor protractor.js
-notify:
-    email:
-        recipients:
-            - chris.marshall@vokalinteractive.com
+    - npm rebuild
+    - npm install
+    - bower --allow-root install
+    - grunt deploy
+    - ./run-build.sh
