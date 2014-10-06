@@ -52,13 +52,20 @@ module.exports = {
         ],
         dest: "build/angular-local-storage.js"
     },
+    toastr: {
+        src: [
+            "source/components/toastr/toastr.min.js"
+        ],
+        dest: "build/toastr.js"
+    },
 	styles:
 	{
 		src: [
 			"source/styles/library/reset.css",
 			"source/styles/library/vokal.css",
 			"source/components/ngDialog/css/ngDialog.min.css",
-			"source/components/ngDialog/css/ngDialog-theme-default.css"
+			"source/components/ngDialog/css/ngDialog-theme-default.css",
+            "source/components/toastr/toastr.min.css"
 		],
 		dest: "build/base.css"
 	}
