@@ -9,9 +9,7 @@
     "at-table": "1.0.1",
     "ngDialog": "0.2.13",
     "angular-local-storage": "0.0.7",
-    "angular-ui-utils": "mask-0.1.1"
-  },
-  "devDependencies": {
+    "angular-ui-utils": "mask-0.1.1",
     "toastr": "~2.0.3"
   },
   "resolutions": {
