@@ -10,7 +10,6 @@ describe( "Login", function ()
       it( "Start Login Process", function ()
       {
             browser.get( "/" );
-            browser.waitForAngular();
 
         var inputUserName = element( by.id( "user-name" ) ),
             inputPassword = element( by.id( "user-password" ) ),

@@ -14,14 +14,6 @@ exports.config = {
 
 	rootElement: 'html',
 
-	onPrepare: function () {
-		browser.driver.manage().window().setSize(1600, 800);
-	},
-
-	files: [
-		"build/angular.js"
-	],
-
 	// Spec patterns are relative to the current working directly when protractor is called.
 	specs: [
 		"tests/login-test.js",
