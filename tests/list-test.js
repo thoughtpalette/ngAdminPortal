@@ -162,18 +162,19 @@ describe( "List View", function ()
             expect( modalWindow.isPresent()).toBe( true );
     } );
 
-//    it( "Delete Item", function ()
-//    {
-//        var deleteButton = element( by.id( "delete-btn" ) ),
-//            row = element( by.css( ".row-1" ) ),
-//            rowId = row.getAttribute( "id" ),
-//            listItem = element( by.id ( rowId ) );
-//
-//            deleteButton.click();
-//
-//            ptor.sleep(2000);
-//
-//            expect( listItem.isPresent()).toBe( false );
-//    } );
+    // Needs to use Mocks
+    // it( "Delete Item", function ()
+    // {
+    //     var deleteButton = element( by.id( "delete-btn" ) ),
+    //         row = element( by.css( ".row-1" ) ),
+    //         rowId = row.getAttribute( "id" ),
+    //         listItem = element( by.id ( rowId ) );
+
+    //         deleteButton.click();
+
+    //         ptor.sleep(2000);
+
+    //         expect( listItem.isPresent()).toBe( false );
+    // } );
 
 } );
