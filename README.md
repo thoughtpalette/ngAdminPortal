@@ -34,3 +34,5 @@ Modals and popups provider for Angular.js applications
 An AngularJS module that gives you access to the browsers local storage with cookie fallback
 
 [https://github.com/grevory/angular-local-storage](https://github.com/grevory/angular-local-storage)
+
+DUMMY TEXT
