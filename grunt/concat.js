@@ -25,38 +25,16 @@ module.exports = {
 		],
 		dest: "build/angular.js"
 	},
-	angularTable:
-	{
-		src: [
-			"source/components/at-table/dist/angular-table.js"
-		],
-		dest: "build/angular-table.js"
-	},
-	angularDialog:
-	{
-		src: [
-			"source/components/ngDialog/js/ngDialog.min.js"
-		],
-		dest: "build/ng-dialog.min.js"
-	},
-    angularMask:
+    components:
     {
         src: [
-            "source/components/angular-ui-utils/mask.min.js"
-        ],
-        dest: "build/angular-mask.js"
-    },
-    ngLocalStorage: {
-        src: [
-            "source/components/angular-local-storage/angular-local-storage.js"
-        ],
-        dest: "build/angular-local-storage.js"
-    },
-    toastr: {
-        src: [
+            "source/components/at-table/dist/angular-table.js",
+            "source/components/ngDialog/js/ngDialog.min.js",
+            "source/components/angular-ui-utils/mask.min.js",
+            "source/components/angular-local-storage/angular-local-storage.js",
             "source/components/toastr/toastr.min.js"
         ],
-        dest: "build/toastr.js"
+        dest: "build/components.js"
     },
 	styles:
 	{
