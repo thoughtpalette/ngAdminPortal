@@ -7,7 +7,6 @@ var angMod = angular.module( "vokal", [
 	"ngTouch",
 	"ngSanitize",
 	"vokal.filters",
-	"vokal.services",
 	"vokal.directives",
 	"angular-table",
 	"ngDialog",
@@ -65,11 +64,11 @@ angMod.config( [ "$routeProvider", "$locationProvider", "$sceDelegateProvider",
 
 			} ] };
 
-		$routeProvider.when( "/login", { templateUrl: STATIC_PATH + "templates/login.html", controller: "LoginCtrl" } );
-		$routeProvider.when( "/list", { templateUrl: STATIC_PATH + "templates/list.html", controller: "ListCtrl", resolve: requireUser } );
-		$routeProvider.when( "/infinite-list", { templateUrl: STATIC_PATH + "templates/infinite-list.html", controller: "ListCtrl", resolve: requireUser } );
-		$routeProvider.when( "/logout", { template: " ", controller: "LogoutCtrl"});
-		$routeProvider.otherwise( { redirectTo: "/login" } );
+		$routeProvider.when( "/login", { templateUrl: STATIC_PATH + "templates/login.html", controller: "LoginCtrl" } )
+			.when( "/list", { templateUrl: STATIC_PATH + "templates/list.html", controller: "ListCtrl", resolve: requireUser, active: "list" } )
+			.when( "/infinite-list", { templateUrl: STATIC_PATH + "templates/infinite-list.html", controller: "ListCtrl", resolve: requireUser, active: "infinite-list" } )
+			.when( "/logout", { template: " ", controller: "LogoutCtrl"})
+			.otherwise( { redirectTo: "/login" } );
 
 		$locationProvider.html5Mode( true ).hashPrefix( "!" );
 
