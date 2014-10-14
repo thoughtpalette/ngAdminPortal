@@ -30,9 +30,9 @@ angMod.service( "infiniteScroll", [ "API", "UrlHelper",
 
             // Can use a switch/if statement to change url based
             // on this.type passed in from controller/initialization
-            var url = "API End point here";
+            var url = "/users";
 
-            API.$get( url + "?page=" + this.after )
+            API.$get( url + "?p=" + this.after )
                 .success( function ( data )
                 {
                     var items = data.results;
@@ -42,7 +42,8 @@ angMod.service( "infiniteScroll", [ "API", "UrlHelper",
                         this.items.push( items[ i ] );
                     }
 
-                    this.next_page = data.next;
+                    // May be just data.next if using old API
+                    this.next_page = data.next_page;
                     this.after++;
                     this.busy = false;
 
@@ -54,7 +55,7 @@ angMod.service( "infiniteScroll", [ "API", "UrlHelper",
                 }.bind( this ) )
                 .error( function()
                 {
-                    toastr.error( "There was an Error", "Error" );
+                    toastr.error( "Error", "There was an Error" );
                 } );
         };
 

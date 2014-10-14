@@ -19,39 +19,26 @@
         <table>
             <thead>
                 <th>User Id</th>
-                <th>Name</th>
+                <th>Full Name</th>
                 <th>Contact Email</th>
-                <th>Edit</th>
-                <th>Suspend User</th>
-                <th>Delete</th>
             </thead>
-            <tbody infinite-scroll="users.nextPage()"
-                    infinite-scroll-disabled="users.busy || users.next_page === null"
+            <tbody infinite-scroll="items.nextPage()"
+                    infinite-scroll-disabled="items.busy || items.next_page === null"
                     infinite-scroll-distance="0">
-                <tr data-ng-repeat="item in users.items | filter:query" id="{{ item.id }}" class="row-{{ $index + 1 }}">
+                <tr data-ng-repeat="item in items.items | filter:query" id="{{ item.id }}" class="row-{{ $index + 1 }}">
                     <td>
                         {{ item.id }}
                     </td>
                     <td>
-                        {{ item.name }}
+                        {{ item.first_name }} {{ item.last_name }}
                     </td>
                     <td>
                         <a href="mailto:{{ item.email }}">{{ item.email }}</a>
                     </td>
-                    <td>
-                        <i data-ng-click="openEditForm( item )" class="glyphicon glyphicon-edit"></i>
-                    </td>
-                    <td>
-                        <i data-ng-click="suspendToggle( item )" class="glyphicon glyphicon-ban-circle" data-ng-hide="item.is_suspended"></i>
-                        <i data-ng-click="suspendToggle( item )" class="glyphicon glyphicon-ok" data-ng-show="item.is_suspended"></i>
-                    </td>
-                    <td>
-                        <i data-ng-click="openDeleteModal( item )" class="glyphicon glyphicon-remove"></i>
-                    </td>
                 </tr>
             </tbody>
         </table>
-        <div data-ng-show="users.busy">Loading data...</div>
+        <div data-ng-show="items.busy">Loading data...</div>
     </div>
 </div>
 
