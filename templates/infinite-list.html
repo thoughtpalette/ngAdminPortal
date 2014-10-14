@@ -13,7 +13,6 @@
 
         <div class="table-controls">
             <input type="text" placeholder="Filter Users" data-ng-model="query">
-            <button type="button" id="add-user-btn" class="btn btn-primary" data-ng-click="openNewUserForm()">Add New User</button>
         </div>
 
         <table>
@@ -41,11 +40,3 @@
         <div data-ng-show="items.busy">Loading data...</div>
     </div>
 </div>
-
-<script type="text/ng-template" id="suspend">
-    <h3>Confirm Suspension</h3>
-    <p>Do you really want to suspend <strong>{{ user.name }}?</strong></p>
-
-    <button type="button" id="suspend-user-btn" class="btn btn-danger" data-ng-click="suspendUser( user );closeThisDialog();">Suspend User</button>
-    <button type="button" class="btn btn-default" data-ng-click="closeThisDialog()">Cancel</button>
-</script>
