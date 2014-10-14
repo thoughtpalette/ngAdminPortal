@@ -12,6 +12,7 @@ app.use( express.static( __dirname ) );
 app.set( "view engine", "ejs" );
 app.set( "views", __dirname );
 
+// Endpoint only for infiniteScroll Example
 app.get( "/users", function ( req, res ) {
 
     // Fake Response
