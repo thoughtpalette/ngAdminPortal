@@ -10,8 +10,8 @@ angMod.service( "Session", ["localStorageService", "$rootScope", "$location", "$
 
             // Local Storage Session management
             localStorageService.set( "authToken", user.auth_token );
-            localStorageService.set( "user.role_id", user.role_id );
-            localStorageService.set( "user.phone_number", user.phone_number );
+            localStorageService.set( "user.roleId", user.role_id );
+            localStorageService.set( "user.phoneNumber", user.phone_number );
             localStorageService.set( "user.email", user.email );
             localStorageService.set( "user.role", user.role );
 
@@ -27,8 +27,8 @@ angMod.service( "Session", ["localStorageService", "$rootScope", "$location", "$
 
             user: function () {
                 return {
-                    role_id: localStorageService.get( "user.role_id" ),
-                    phone_number: localStorageService.get( "user.phone_number" ),
+                    role_id: localStorageService.get( "user.roleId" ),
+                    phone_number: localStorageService.get( "user.phoneNumber" ),
                     email: localStorageService.get( "user.email" ),
                     role: localStorageService.get( "user.role" )
                 }

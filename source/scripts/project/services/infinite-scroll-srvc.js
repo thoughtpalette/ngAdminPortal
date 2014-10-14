@@ -7,7 +7,6 @@ angMod.service( "infiniteScroll", [ "API", "UrlHelper",
             this.busy = false;
             this.after = 1;
             this.type = type;
-            this.next_page;
             this.reload = reload;
 
             if ( this.reload )

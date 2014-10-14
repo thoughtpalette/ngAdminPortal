@@ -3,17 +3,18 @@ var http    = require( "http" );
 var bodyParser = require( "body-parser" );
 var app     = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
+app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded( {
   extended: true
-}));
+} ) );
 
 app.use( express.static( __dirname ) );
 app.set( "view engine", "ejs" );
 app.set( "views", __dirname );
 
 // Endpoint only for infiniteScroll Example
-app.get( "/users", function ( req, res ) {
+app.get( "/users", function ( req, res )
+{
 
     // Fake Response
     if ( req.query.p === "1" )
@@ -33,7 +34,7 @@ app.get( "/users", function ( req, res ) {
     }
 
     res.end();
-});
+} );
 
 var serveIndex = function ( req, res, next )
 {
