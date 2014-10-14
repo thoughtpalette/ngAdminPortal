@@ -28,19 +28,9 @@ angMod.service( "infiniteScroll", [ "API", "UrlHelper",
 
             this.busy = true;
 
-
-            if ( this.type === "user" )
-            {
-                var url = UrlHelper.customer.getList();
-            }
-            else if ( this.type === "companies" )
-            {
-                var url = UrlHelper.company.getList();
-            }
-            else if ( this.type === "tickets" )
-            {
-                var url = UrlHelper.ticket.getList();
-            }
+            // Can use a switch/if statement to change url based
+            // on this.type passed in from controller/initialization
+            var url = "API End point here";
 
             API.$get( url + "?page=" + this.after )
                 .success( function ( data )

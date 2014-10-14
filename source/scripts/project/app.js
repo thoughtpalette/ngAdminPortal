@@ -12,7 +12,8 @@ var angMod = angular.module( "vokal", [
 	"angular-table",
 	"ngDialog",
 	"ui.mask",
-	"LocalStorageModule"
+	"LocalStorageModule",
+	"infinite-scroll"
 ] );
 
 angMod.run( function ( $rootScope, $location, Session, $http )
@@ -66,6 +67,7 @@ angMod.config( [ "$routeProvider", "$locationProvider", "$sceDelegateProvider",
 
 		$routeProvider.when( "/login", { templateUrl: STATIC_PATH + "templates/login.html", controller: "LoginCtrl" } );
 		$routeProvider.when( "/list", { templateUrl: STATIC_PATH + "templates/list.html", controller: "ListCtrl", resolve: requireUser } );
+		$routeProvider.when( "/infinite-list", { templateUrl: STATIC_PATH + "templates/infinite-list.html", controller: "ListCtrl", resolve: requireUser } );
 		$routeProvider.when( "/logout", { template: " ", controller: "LogoutCtrl"});
 		$routeProvider.otherwise( { redirectTo: "/login" } );
 
