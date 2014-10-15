@@ -32,6 +32,7 @@ module.exports = {
             "source/components/ngDialog/js/ngDialog.min.js",
             "source/components/angular-ui-utils/mask.min.js",
             "source/components/angular-local-storage/angular-local-storage.js",
+            "source/components/ngInfiniteScroll/build/ng-infinite-scroll.min.js",
             "source/components/toastr/toastr.min.js"
         ],
         dest: "build/components.js"

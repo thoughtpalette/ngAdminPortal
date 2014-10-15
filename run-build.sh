@@ -15,7 +15,7 @@ node server &
 PIDS[3]=$!
 sleep 2
 
-protractor protractor.js
+protractor protractor_config.js
 
 RESULT=$?
 

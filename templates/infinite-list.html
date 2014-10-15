@@ -1,0 +1,42 @@
+<div class="row-container header">
+    <div class="row">
+        <header>
+            <h1>List View</h1>
+
+            <div data-ng-include="'templates/partials/main-nav.html'"></div>
+        </header>
+    </div>
+</div>
+
+<div class="row-container list-container">
+    <div class="row">
+
+        <div class="table-controls">
+            <input type="text" placeholder="Filter Users" data-ng-model="query">
+        </div>
+
+        <table>
+            <thead>
+                <th>User Id</th>
+                <th>Full Name</th>
+                <th>Contact Email</th>
+            </thead>
+            <tbody infinite-scroll="items.nextPage()"
+                    infinite-scroll-disabled="items.busy || items.next_page === null"
+                    infinite-scroll-distance="0">
+                <tr data-ng-repeat="item in items.items | filter:query" id="{{ item.id }}" class="row-{{ $index + 1 }}">
+                    <td>
+                        {{ item.id }}
+                    </td>
+                    <td>
+                        {{ item.first_name }} {{ item.last_name }}
+                    </td>
+                    <td>
+                        <a href="mailto:{{ item.email }}">{{ item.email }}</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div data-ng-show="items.busy">Loading data...</div>
+    </div>
+</div>
