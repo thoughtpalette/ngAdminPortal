@@ -21,7 +21,7 @@ module.exports = {
 	templates:
 	{
 		files: [
-			"templates/**.html"
+			"source/templates/**/*.html"
 		],
 		tasks: [ "ngtemplates" ]
 	}
