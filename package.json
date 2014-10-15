@@ -1,15 +1,17 @@
 {
-  "name": "project-name",
+  "name": "web-admin-seed",
   "version": "0.1.0",
-  "description": "Your Project Title",
+  "description": "Boiler Plate Admin Portal",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vokalinteractive/Repo-Name.git"
+    "url": "https://github.com/vokalinteractive/web-admin-seed.git"
   },
   "bugs": {
-    "url": "https://github.com/vokalinteractive/Repo-Name/issues"
+    "url": "https://github.com/vokalinteractive/web-admin-seed/issues"
   },
-  "homepage": "https://github.com/vokalinteractive/Repo-Name",
+  "homepage": "https://github.com/vokalinteractive/web-admin-seed",
+  "appPath" : "source",
+  "buildPath" : "build",
   "devDependencies": {
     "grunt-contrib-watch": "^0.6.1"
   },
@@ -23,6 +25,7 @@
     "grunt-contrib-uglify": "^0.5.0",
     "grunt-text-replace": "^0.3.12",
     "load-grunt-config": "^0.13.1",
-    "body-parser" : "1.6.5"
+    "grunt-angular-templates": "^0.5.7",
+    "body-parser": "1.6.5"
   }
 }

@@ -2,6 +2,7 @@ default:
   - jshint
   - concat
   - replace
+  - ngtemplates
   - less:dev
 
 deploy:
@@ -9,4 +10,6 @@ deploy:
   - uglify
   - replace
   - concat
+  - ngtemplates
+  - uglify:generated
   - less:deploy
