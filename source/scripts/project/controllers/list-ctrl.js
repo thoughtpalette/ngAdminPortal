@@ -42,7 +42,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
 
             ngDialog.open(
                 {
-                    template: "templates/partials/list-view-detail.html",
+                    template: "/build/templates/partials/list-view-detail.html",
                     className: "ngdialog-theme-default item-form",
                     scope: $scope
                 }
@@ -79,7 +79,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
         {
             ngDialog.open(
                 {
-                    template: "templates/partials/new-list-item.html",
+                    template: "/build/templates/partials/new-list-item.html",
                     className: "ngdialog-theme-default item-form",
                     scope: $scope
                 }
@@ -92,7 +92,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
 
             var dialog = ngDialog.open(
                 {
-                    template: "templates/partials/confirm-delete.html",
+                    template: "/build/templates/partials/confirm-delete.html",
                     scope: $scope
                 }
             );
