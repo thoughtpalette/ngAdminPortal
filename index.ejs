@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	</head>
 
-	<body data-ng-controller="Site" class="{{controller}}">
+	<body data-ng-controller="Site" class="{{ controller | lowercase }}">
 
 		<main data-ng-view></main>
 
