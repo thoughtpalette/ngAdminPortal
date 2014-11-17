@@ -17,20 +17,20 @@
         </div>
 
         <table at-table at-paginated at-config="config" at-list="filteredList">
-        <thead></thead>
+            <thead></thead>
             <tbody>
-                <tr id="{{item.id}}" class="row-{{$index + 1}}">
-                <td at-implicit at-sortable at-attribute="name" at-title="Name"></td>
-                <td at-implicit at-sortable at-attribute="address.street" at-title="Address"></td>
-                <td at-sortable at-attribute="email" at-title="Contact Email">
-                    <a href="mailto:{{item.email}}">{{item.email}}</a>
-                </td>
-                <td at-title="Edit">
-                    <i data-ng-click="openEditForm(item)" class="glyphicon glyphicon-edit"></i>
-                </td>
-                <td at-title="Delete">
-                    <i data-ng-click="openDeleteModal(item)" class="glyphicon glyphicon-remove"></i>
-                </td>
+                <tr id="{{ item.id }}" class="row-{{ $index + 1 }}">
+                    <td at-implicit at-sortable at-attribute="name" at-title="Name"></td>
+                    <td at-implicit at-sortable at-attribute="address.street" at-title="Address"></td>
+                    <td at-sortable at-attribute="email" at-title="Contact Email">
+                        <a href="mailto:{{ item.email }}">{{item.email}}</a>
+                    </td>
+                    <td at-title="Edit">
+                        <i data-ng-click="openEditForm(item)" class="glyphicon glyphicon-edit"></i>
+                    </td>
+                    <td at-title="Delete">
+                        <i data-ng-click="openDeleteModal(item)" class="glyphicon glyphicon-remove"></i>
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -1,5 +1,5 @@
-angMod.controller( "LogoutCtrl", [ "$scope", "$rootScope", "$location", "Session",
-    function ( $scope, $rootScope, $location, Session )
+angMod.controller( "LogoutCtrl", [ "$location", "Session",
+    function ( $location, Session )
 {
         Session.destroy();
         $location.path( "/login" );
