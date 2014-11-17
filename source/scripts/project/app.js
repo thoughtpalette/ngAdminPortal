@@ -15,7 +15,7 @@ var angMod = angular.module( "vokal", [
 	"infinite-scroll"
 ] );
 
-angMod.run( function ( $rootScope, $location, Session, $http )
+angMod.run( function ( $rootScope, $location, Session )
 {
 
    $rootScope.$on( "$routeChangeSuccess", function ( ev, data )
@@ -64,10 +64,27 @@ angMod.config( [ "$routeProvider", "$locationProvider", "$sceDelegateProvider",
 
 			} ] };
 
-		$routeProvider.when( "/login", { templateUrl: STATIC_PATH + "build/templates/login.html", controller: "LoginCtrl" } )
-			.when( "/list", { templateUrl: STATIC_PATH + "build/templates/list.html", controller: "ListCtrl", resolve: requireUser, active: "list" } )
-			.when( "/infinite-list", { templateUrl: STATIC_PATH + "build/templates/infinite-list.html", controller: "InfiniteListCtrl", resolve: requireUser, active: "infinite-list" } )
-			.when( "/logout", { template: " ", controller: "LogoutCtrl"})
+		$routeProvider
+            .when( "/login", { 
+                templateUrl: STATIC_PATH + "build/templates/login.html",
+                controller: "LoginCtrl"
+            } )
+			.when( "/list", {
+                templateUrl: STATIC_PATH + "build/templates/list.html",
+                controller: "ListCtrl",
+                resolve: requireUser,
+                active: "list"
+            } )
+			.when( "/infinite-list", {
+                templateUrl: STATIC_PATH + "build/templates/infinite-list.html",
+                controller: "InfiniteListCtrl",
+                resolve: requireUser,
+                active: "infinite-list"
+            } )
+			.when( "/logout", {
+                template: " ",
+                controller: "LogoutCtrl"
+            } )
 			.otherwise( { redirectTo: "/login" } );
 
 		$locationProvider.html5Mode( true ).hashPrefix( "!" );
