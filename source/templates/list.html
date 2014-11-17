@@ -12,7 +12,7 @@
     <div class="row">
 
         <div class="table-controls form-inline clearfix">
-            <input type="text" class="form-control" placeholder="Filter List" data-ng-model="query">
+            <input type="text" class="form-control" placeholder="Filter List" data-ng-model="query" data-ng-change="updateFilteredList( query )">
             <button id="add-item-btn" type="button" class="btn btn-primary" data-ng-click="addNewItemForm()">Add New Item</button>
         </div>
 
@@ -23,13 +23,13 @@
                     <td at-implicit at-sortable at-attribute="name" at-title="Name"></td>
                     <td at-implicit at-sortable at-attribute="address.street" at-title="Address"></td>
                     <td at-sortable at-attribute="email" at-title="Contact Email">
-                        <a href="mailto:{{ item.email }}">{{item.email}}</a>
+                        <a href="mailto:{{ item.email }}">{{ item.email }}</a>
                     </td>
                     <td at-title="Edit">
-                        <i data-ng-click="openEditForm(item)" class="glyphicon glyphicon-edit"></i>
+                        <i data-ng-click="openEditForm( item )" class="glyphicon glyphicon-edit"></i>
                     </td>
                     <td at-title="Delete">
-                        <i data-ng-click="openDeleteModal(item)" class="glyphicon glyphicon-remove"></i>
+                        <i data-ng-click="openDeleteModal( item )" class="glyphicon glyphicon-remove"></i>
                     </td>
                 </tr>
             </tbody>
