@@ -1,5 +1,5 @@
-angMod.service( "Session", ["localStorageService", "$rootScope", "$location", "$http", "$q",
-    function ( localStorageService, $rootScope, $location, $http, $q )
+angMod.service( "Session", ["localStorageService", "$rootScope", "$location", "$http",
+    function ( localStorageService, $rootScope, $location, $http )
     {
 
         this.create = function ( user )
@@ -34,30 +34,6 @@ angMod.service( "Session", ["localStorageService", "$rootScope", "$location", "$
                 }
             }
 
-        };
-
-        function isAuth ()
-        {
-            return localStorageService.get( "authToken" ) && localStorageService.get( "user.role" );
-        }
-        this.routeAuth = function ()
-        {
-            var deferred = $q.defer();
-            var publicPaths = [ "/login", "/logout" ];
-            if ( publicPaths.indexOf( $location.path() ) !== -1 )
-            {
-                deferred.resolve( null );
-            }
-            else if( isAuth() )
-            {
-                deferred.resolve( $rootScope.user );
-            }
-            else
-            {
-                deferred.reject( "No user token" );
-                $location.path( "/login" );
-            }
-            return deferred.promise;
         };
 
         this.destroy = function ()
