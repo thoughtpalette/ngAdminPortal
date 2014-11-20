@@ -3,5 +3,5 @@ script:
     - npm rebuild
     - npm install
     - bower --allow-root install
-    - grunt deploy
+    - grunt default
     - ./run-build.sh
