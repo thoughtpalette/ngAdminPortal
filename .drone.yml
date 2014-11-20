@@ -2,6 +2,7 @@ image: docker.vokalinteractive.com/node-testing
 script:
     - npm rebuild
     - npm install
+    - npm install protractor
     - bower --allow-root install
     - grunt default
     - ./run-build.sh
