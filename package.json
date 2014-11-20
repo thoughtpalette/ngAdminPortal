@@ -13,8 +13,7 @@
   "appPath": "source",
   "buildPath": "build",
   "scripts": {
-    "install": "node ./node_modules/protractor/bin/webdriver-manager update",
-    "test": "node ./node_modules/protractor/bin/protractor protractor_config"
+    "test": "node ./node_modules/protractor/bin/webdriver-manager update && node ./node_modules/protractor/bin/protractor protractor_config"
   },
   "devDependencies": {
     "grunt-contrib-watch": "^0.6.1"
