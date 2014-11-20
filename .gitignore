@@ -1,4 +1,3 @@
-node_modules
 /source/components
 /build/**
 !/build/README.md
