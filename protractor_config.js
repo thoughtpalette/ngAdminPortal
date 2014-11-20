@@ -2,8 +2,9 @@
 
 exports.config = {
 
-	// The address of a running selenium server.
-	seleniumAddress: "http://localhost:4444/wd/hub",
+    // Protractor defaults to using the local .jar file if no seleniumAddress is given
+    // Leave seleniumServerJar commented out to default to the correct version url
+    // seleniumServerJar: "node_modules/protractor/selenium/selenium-server-standalone",
 
 	// Capabilities to be passed to the webdriver instance.
 	capabilities: {
