@@ -11,6 +11,9 @@ exports.config = {
 		"browserName": "chrome"
 	},
 
+    // Prevents a full selenium start-up, much quicker, but only works with Chrome and Firefox
+    directConnect: true,
+
 	baseUrl: 'http://localhost:3000',
 
 	rootElement: 'html',
