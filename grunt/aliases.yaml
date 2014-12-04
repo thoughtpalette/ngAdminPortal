@@ -1,15 +1,26 @@
 default:
-  - jshint
+  - clean:build
+  - uglify
   - concat
-  - replace
+  - less
+  - copy
   - ngtemplates
-  - less:dev
+  - replace
+
+test:
+  - default
+  - instrument
+  - protractor_coverage
+  - default
+  - makeReport
 
 deploy:
-  - jshint
+  - clean
+  - copy
   - uglify
-  - replace
   - concat
   - ngtemplates
-  - uglify
-  - less:deploy
+  - replace
+  - less
+  - s3
+  - cloudfront

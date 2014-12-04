@@ -16,13 +16,13 @@ module.exports = {
 		files: [
 			"source/styles/project/*"
 		],
-		tasks: [ "less:dev" ]
+		tasks: [ "less" ]
 	},
 	templates:
 	{
 		files: [
 			"source/templates/**/*.html"
 		],
-		tasks: [ "ngtemplates" ]
+		tasks: [ "ngtemplates", "replace" ]
 	}
 };

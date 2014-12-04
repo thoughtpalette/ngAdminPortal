@@ -1,31 +1,18 @@
-"use strict";
-var environmentTarget = "local";
-
-var getTarget = function ()
-{
-    return environmentTarget;
-};
-var setTarget = function ( target )
-{
-    environmentTarget = target;
-};
+var replacements = [
+        {
+            from: "{{ VERSION }}",
+            to: "<%= version %>"
+        },
+        {
+            from: "{{ API_PATH }}",
+            to: "<%= api %>"
+        }
+    ];
 
 module.exports = {
-    replace:
-    {
-        src: [ "build/project.js" ],
+    js: {
+        src: [ "build/*.css", "build/*.js", "build/**/*.html" ],
         overwrite: true,
-        replacements: [ {
-            from: 'var pathRoot = "/v1";',
-            to: function ( matched )
-            {
-                var target = getTarget();
-                if( target === "local" )
-                {
-                    return 'var pathRoot = "https://54.186.79.255";';
-                }
-                return matched;
-            }
-        }]
+        replacements: replacements
     }
 };
