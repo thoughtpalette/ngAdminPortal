@@ -1,4 +1,3 @@
-// Check for and attach token on all API requests
 angMod.factory( "API", [ "$http", "$rootScope", "$location", "$q", "Session",
     function ( $http, $rootScope, $location, $q, Session )
     {
@@ -7,7 +6,7 @@ angMod.factory( "API", [ "$http", "$rootScope", "$location", "$q", "Session",
             var headers = { "AUTHORIZATION": "Token " + Session.get.authToken() };
             var options = { method: method, url: path, headers: headers, data: requestData || {} };
 
-            if( method === "postFile" )
+            if( method == "postFile" )
             {
                 headers[ "Content-Type" ] = undefined;  // To ensure multipart boundary is added
                 options.method            = "post";
@@ -69,6 +68,5 @@ angMod.factory( "API", [ "$http", "$rootScope", "$location", "$q", "Session",
             $patch:    function( path, requestData ) { return apiRequest( "patch", path, requestData ); },
             $delete:   function( path ) {              return apiRequest( "delete", path, {} ); }
         };
-
     }
 ] );

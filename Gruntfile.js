@@ -5,7 +5,7 @@ module.exports = function(grunt)
         data: {
             version: grunt.option( "gitver" ) || Date.now(),
             env: grunt.option( "env" ) || "dev",
-            api: "",
+            api: "http://API_URL",
             aws: {
                 accessKeyId: grunt.option( "aws-access-key-id" ),
                 secretAccessKey: grunt.option( "aws-secret-access-key" ),
