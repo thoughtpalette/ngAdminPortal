@@ -1,7 +1,8 @@
 image: docker.vokalinteractive.com/node-testing
 script:
-    - npm rebuild
     - npm install
+    - node ./node_modules/protractor/bin/webdriver-manager update
     - bower --allow-root install
-    - grunt deploy
+    - grunt default
+    - chmod +x run-build.sh
     - ./run-build.sh

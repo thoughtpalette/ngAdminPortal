@@ -11,5 +11,5 @@ deploy:
   - replace
   - concat
   - ngtemplates
-  - uglify:generated
+  - uglify
   - less:deploy

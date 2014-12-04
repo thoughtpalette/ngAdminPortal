@@ -10,6 +10,7 @@ Drive-thru Angular admin front end based on angular-seed project.
  - ```npm install```
  - ```bower install```
  - ``` grunt default```
+ - ``` node server```
 
 ### 1. Services.js
  - Set API endpoints in UrlHelper
