@@ -2,8 +2,6 @@
 
 /* Tests */
 
-var ptor = protractor.getInstance();
-
 describe( "Login", function ()
 {
 
