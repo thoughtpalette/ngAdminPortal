@@ -1,7 +1,7 @@
 module.exports = {
 	options:
 	{
-		mangle: true,
+		mangle: false,
 		compress: true,
 		banner: "/*! <%= pkg.name %> <%= grunt.template.today( 'yyyy-mm-dd' ) %> */",
 		sourceMap: true,
@@ -12,7 +12,7 @@ module.exports = {
 		files:
 		{
 			"build/project.js": [
-				"source/scripts/project/*.js"
+				"source/scripts/project/**/*.js"
 			]
 		}
 	}

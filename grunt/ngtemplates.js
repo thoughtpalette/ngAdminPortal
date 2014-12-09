@@ -16,7 +16,7 @@ module.exports = {
         }
     },
     build: {
-        src: [ "templates/**/*.html" ],
+        src: [ "templates/views/*.html", "templates/partials/*.html" ],
         dest: "<%= pkg.buildPath %>/templates.js",
         cwd: "<%= pkg.appPath %>"
     }

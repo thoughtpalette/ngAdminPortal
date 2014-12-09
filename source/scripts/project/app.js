@@ -66,17 +66,17 @@ angMod.config( [ "$routeProvider", "$locationProvider", "$sceDelegateProvider",
 
         $routeProvider
             .when( "/login", { 
-                templateUrl: STATIC_PATH + "build/templates/login.html",
+                templateUrl: "/build/templates/views/login.html",
                 controller: "LoginCtrl"
             } )
             .when( "/list", {
-                templateUrl: STATIC_PATH + "build/templates/list.html",
+                templateUrl: "/build/templates/views/list.html",
                 controller: "ListCtrl",
                 resolve: requireUser,
                 active: "list"
             } )
             .when( "/infinite-list", {
-                templateUrl: STATIC_PATH + "build/templates/infinite-list.html",
+                templateUrl: "/build/templates/views/infinite-list.html",
                 controller: "InfiniteListCtrl",
                 resolve: requireUser,
                 active: "infinite-list"

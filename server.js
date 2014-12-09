@@ -1,16 +1,8 @@
 var express = require( "express" );
-var http    = require( "http" );
-var bodyParser = require( "body-parser" );
-var app     = express();
-
-app.use( bodyParser.json() );
-app.use( bodyParser.urlencoded( {
-  extended: true
-} ) );
+var http = require( "http" );
+var app = express();
 
 app.use( express.static( __dirname ) );
-app.set( "view engine", "ejs" );
-app.set( "views", __dirname );
 
 // Endpoint only for infiniteScroll Example
 app.get( "/users", function ( req, res )
@@ -36,13 +28,16 @@ app.get( "/users", function ( req, res )
     res.end();
 } );
 
-var serveIndex = function ( req, res, next )
+app.get( "*.*", function( req, res, next )
 {
-	res.render( "index", { STATIC_PATH: process.env.STATIC_PATH || "/" } );
-};
+    res.status( 404 ).send( "Not Found" );
+} );
 
-app.route( "*" ).get( serveIndex );
+app.get( "*", function( req, res, next )
+{
+    res.status( 200 ).sendFile( __dirname + "/build/index.html" );
+} );
 
 var port = process.env.PORT || 3000;
 http.createServer( app ).listen( port );
-console.log( "Express listening on " + port )
+console.log( "Server running on " + port );
