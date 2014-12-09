@@ -1,4 +1,11 @@
 module.exports = {
+	index:
+	{
+		src: [
+			"source/templates/index.html"
+		],
+		dest: "build/index.html"
+	},
 	scripts:
 	{
 		src: [

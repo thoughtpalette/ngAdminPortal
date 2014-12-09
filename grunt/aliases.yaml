@@ -1,15 +1,20 @@
 default:
+  - clean
   - jshint
   - concat
-  - replace
   - ngtemplates
   - less:dev
+  - envDev
+  - replace
 
 deploy:
+  - clean
   - jshint
-  - uglify
-  - replace
   - concat
   - ngtemplates
   - uglify
   - less:deploy
+  - envProd
+  - replace
+  - s3
+  - cloudfront
