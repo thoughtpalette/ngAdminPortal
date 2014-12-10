@@ -11,7 +11,12 @@ script:
     - grunt default
     - chmod +x run-build.sh
     - ./run-build.sh
-deploy:
-    bash:
-        script:
-            - grunt deploy --aws-access-key-id=$AWS_ACCESS_KEY --aws-secret-access-key=$AWS_SECRET_KEY --aws-s3-bucket=$AWS_BUCKET --aws-cloudfront-distribution-id=$AWS_DISTRO_ID --gitver=$(git rev-parse --short HEAD)
+# cloudfront deployment, commented out in seed project
+# deploy:
+#    bash:
+#        script:
+#            - grunt deploy --aws-access-key-id=$AWS_ACCESS_KEY --aws-secret-access-key=$AWS_SECRET_KEY --aws-s3-bucket=$AWS_BUCKET --aws-cloudfront-distribution-id=$AWS_DISTRO_ID --gitver=$(git rev-parse --short HEAD)
+notify:
+    email:
+        recipients:
+            - jarrett.widman@vokalinteractive.com # use specific project maintainers as needed
