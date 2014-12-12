@@ -1,5 +1,3 @@
-// Protractor config file
-
 exports.config = {
 
     // Protractor defaults to using the local .jar file if no seleniumAddress is given
@@ -34,6 +32,11 @@ exports.config = {
         includeStackTrace: true,
         // Default time to wait in ms before a test fails.
         defaultTimeoutInterval: 30000
-    }
+    },
 
+    onPrepare: function ()
+    {
+        require( "jasmine-reporters" );
+        jasmine.getEnv().addReporter( new jasmine.JUnitXmlReporter( "coverage/net", true, true ) );
+    }
 };
