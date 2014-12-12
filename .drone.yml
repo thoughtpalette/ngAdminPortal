@@ -12,9 +12,7 @@ script:
     - echo "password $BOWER_OAUTH" >> ~/.netrc
     - git config --global url."https://github".insteadOf git://github
     - npm install
-    - node ./node_modules/protractor/bin/webdriver-manager update
     - bower --allow-root install
-    - grunt default
     - chmod +x run-build.sh
     - ./run-build.sh
 # cloudfront deployment, commented out in seed project
