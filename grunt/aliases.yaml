@@ -1,11 +1,18 @@
 default:
-  - clean
+  - clean:build
   - jshint
   - concat
   - ngtemplates
   - less:dev
   - envDev
   - replace
+
+test:
+  - default
+  - instrument
+  - protractor_coverage
+  - default
+  - makeReport
 
 deploy:
   - clean
