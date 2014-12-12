@@ -4,7 +4,13 @@ env:
     - AWS_SECRET_KEY=$$awsSecretKey
     - AWS_BUCKET=$$awsBucket
     - AWS_DISTRO_ID=$$awsDistroId
+    - BOWER_LOGIN=$$bowerLogin
+    - BOWER_OAUTH=$$bowerOauth
 script:
+    - echo "machine github.com" > ~/.netrc
+    - echo "login $BOWER_LOGIN" >> ~/.netrc
+    - echo "password $BOWER_OAUTH" >> ~/.netrc
+    - git config --global url."https://github".insteadOf git://github
     - npm install
     - node ./node_modules/protractor/bin/webdriver-manager update
     - bower --allow-root install
