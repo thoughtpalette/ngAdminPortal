@@ -21,7 +21,7 @@
                 <th>Full Name</th>
                 <th>Contact Email</th>
             </thead>
-            <tbody infinite-scroll="items.nextPage()"
+            <tbody infinite-scroll="items.getNextPage()"
                     infinite-scroll-disabled="items.busy || items.next_page === null"
                     infinite-scroll-distance="0">
                 <tr data-ng-repeat="item in items.items | filter:query" id="{{ item.id }}" class="row-{{ $index + 1 }}">

@@ -11,51 +11,53 @@ angMod.service( "infiniteScroll", [ "API", "UrlHelper",
 
             if ( this.reload )
             {
-                this.next_page = 1;
+                this.nextPage = 1;
                 this.reload = false;
-
-                this.nextPage();
+                this.getNextPage();
             }
-        };
 
-        infiniteScroll.prototype.nextPage = function()
-        {
-            if ( this.busy )
+            this.getNextPage = function ()
             {
-                return;
-            }
-
-            this.busy = true;
-
-            // Can use a switch/if statement to change url based
-            // on this.type passed in from controller/initialization
-            var url = "/users";
-
-            API.$get( url + "?p=" + this.after )
-                .success( function ( data )
+                if ( this.busy || this.nextPage === null )
                 {
-                    var items = data.results;
+                    return;
+                }
 
-                    for ( var i = 0; i < items.length; i++ )
+                this.busy = true;
+
+                // Can use a switch/if statement to change url based
+                // on this.type passed in from controller/initialization
+                var url = "/users";
+
+                API.$get( url + "?p=" + this.after )
+                    .then( function ( data )
                     {
-                        this.items.push( items[ i ] );
-                    }
+                        var items = data.results;
 
-                    // May be just data.next if using old API
-                    this.next_page = data.next_page;
-                    this.after++;
-                    this.busy = false;
+                        if ( items && items.length )
+                        {
+                            for ( var i = 0; i < items.length; i++ )
+                            {
+                                this.items.push( items[ i ] );
+                            }
+                        }
 
-                    if ( this.next_page === null )
+                        // May be just data.next if using old API
+                        this.nextPage = data.nextPage || null;
+                        this.after++;
+                        this.busy = false;
+
+                        if ( this.nextPage === null )
+                        {
+                            toastr.info( "All results loaded." );
+                        }
+
+                    }.bind( this ),
+                    function()
                     {
-                        toastr.info( "All results loaded." );
-                    }
-
-                }.bind( this ) )
-                .error( function()
-                {
-                    toastr.error( "Error", "There was an Error" );
-                } );
+                        toastr.error( "Error", "There was an Error" );
+                    } );
+            };
         };
 
         return infiniteScroll;
