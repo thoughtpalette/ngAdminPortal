@@ -2,6 +2,15 @@
 
 describe( "List View", function ()
 {
+    beforeEach( function ()
+    {
+        var toasts = element.all( by.css( "#toast-container" ) );
+        if( toasts.length )
+        {
+            toasts[ 0 ].click();
+        }
+    } );
+
     it( "Test Redirect", function ()
     {
         // Check Redirect
