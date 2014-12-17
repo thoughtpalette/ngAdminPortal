@@ -44,9 +44,8 @@ module.exports = {
             "source/components/humps/humps.js",
             "source/components/vokal-ng-api/services_humps.js",
             "source/components/vokal-ng-api/services_API.js",
-            "source/components/vokal-ng-lib/directives/vokal_date_picker.js",
-            "source/components/vokal-ng-lib/directives/vokal_time_picker.js",
-            "source/components/vokal-ng-lib/directives/vokal_fill_height.js"
+            "source/components/vokal-ng-lib/directives/*.js",
+            "source/components/vokal-ng-lib/services/*.js"
         ],
         dest: "build/components.js"
     },
