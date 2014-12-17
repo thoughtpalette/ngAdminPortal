@@ -4,12 +4,15 @@ describe( "List View", function ()
 {
     beforeEach( function ()
     {
-        var toasts = element.all( by.css( "#toast-container" ) );
-        if( toasts.length )
+        var toasts = element.all( by.css( "#toast-container .toast" ) );
+        toasts.count().then( function ( count )
         {
-            toasts[ 0 ].click();
-            browser.sleep( 1000 );
-        }
+            if ( count )
+            {
+                toasts.click();
+                browser.sleep( 500 );
+            }
+        } );
     } );
 
     it( "Test Redirect", function ()
