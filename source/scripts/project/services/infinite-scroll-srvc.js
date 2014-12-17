@@ -1,61 +1,62 @@
-angMod.service( "infiniteScroll", [ "API", "UrlHelper",
-    function ( API, UrlHelper )
+// Paging helper for ngInfiniteScroll
+angular.module( "vokal.infiniteScroll", [] )
+.service( "infiniteScroll", [ "API",
+    function ( API )
     {
-        var infiniteScroll = function( type, reload )
+        var infiniteScroll = function( url )
         {
-            this.items = [];
-            this.busy = false;
-            this.after = 1;
-            this.type = type;
-            this.reload = reload;
+            var scope = this;
 
-            if ( this.reload )
+            scope.url = url; // example: /users?p={page}
+
+            scope.reload = function ()
             {
-                this.next_page = 1;
-                this.reload = false;
+                scope.items = [];
+                scope.page = 1;
+                scope.busy = false;
+                scope.hasMore = true;
+                scope.getNextPage();
+            };
 
-                this.nextPage();
-            }
-        };
-
-        infiniteScroll.prototype.nextPage = function()
-        {
-            if ( this.busy )
+            scope.getNextPage = function ()
             {
-                return;
-            }
-
-            this.busy = true;
-
-            // Can use a switch/if statement to change url based
-            // on this.type passed in from controller/initialization
-            var url = "/users";
-
-            API.$get( url + "?p=" + this.after )
-                .success( function ( data )
+                if ( !scope.url || scope.busy || scope.hasMore === false )
                 {
-                    var items = data.results;
+                    return;
+                }
 
-                    for ( var i = 0; i < items.length; i++ )
+                scope.busy = true;
+
+                API.$get( url.replace( "{page}", scope.page ) )
+                    .then( function ( data )
                     {
-                        this.items.push( items[ i ] );
-                    }
+                        var newItems = data.results;
 
-                    // May be just data.next if using old API
-                    this.next_page = data.next_page;
-                    this.after++;
-                    this.busy = false;
+                        if ( newItems && newItems.length )
+                        {
+                            for ( var i = 0; i < newItems.length; i++ )
+                            {
+                                scope.items.push( newItems[ i ] );
+                            }
+                        }
 
-                    if ( this.next_page === null )
+                        scope.hasMore = !!data.nextPage || !!data.next || false;
+                        scope.page++;
+                        scope.busy = false;
+
+                        if ( !scope.hasMore )
+                        {
+                            toastr.info( "All results loaded." );
+                        }
+
+                    },
+                    function()
                     {
-                        toastr.info( "All results loaded." );
-                    }
+                        toastr.error( "Error", "There was an Error" );
+                    } );
+            };
 
-                }.bind( this ) )
-                .error( function()
-                {
-                    toastr.error( "Error", "There was an Error" );
-                } );
+            scope.reload();
         };
 
         return infiniteScroll;

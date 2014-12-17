@@ -21,15 +21,15 @@
                 <th>Full Name</th>
                 <th>Contact Email</th>
             </thead>
-            <tbody infinite-scroll="items.nextPage()"
-                    infinite-scroll-disabled="items.busy || items.next_page === null"
+            <tbody infinite-scroll="list.getNextPage()"
+                    infinite-scroll-disabled="list.busy || list.nextPage === null"
                     infinite-scroll-distance="0">
-                <tr data-ng-repeat="item in items.items | filter:query" id="{{ item.id }}" class="row-{{ $index + 1 }}">
+                <tr data-ng-repeat="item in list.items | filter:query" id="{{ item.id }}" >
                     <td>
                         {{ item.id }}
                     </td>
                     <td>
-                        {{ item.first_name }} {{ item.last_name }}
+                        {{ item.firstName }} {{ item.lastName }}
                     </td>
                     <td>
                         <a href="mailto:{{ item.email }}">{{ item.email }}</a>
