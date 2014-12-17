@@ -8,6 +8,7 @@ describe( "List View", function ()
         if( toasts.length )
         {
             toasts[ 0 ].click();
+            browser.sleep( 1000 );
         }
     } );
 
