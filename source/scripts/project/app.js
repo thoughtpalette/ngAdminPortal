@@ -13,7 +13,8 @@ var angMod = angular.module( "vokal", [
     "ui.mask",
     "LocalStorageModule",
     "infinite-scroll",
-    "vokal.API"
+    "vokal.API",
+    "vokal.infiniteScroll"
 ] );
 
 angMod.run( function ( $rootScope, $location, Session )
