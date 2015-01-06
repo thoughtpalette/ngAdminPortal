@@ -1,12 +1,18 @@
 angMod.controller( "InfiniteListCtrl", [ "$scope", "$rootScope", "infiniteScroll",
     function ( $scope, $rootScope, infiniteScroll )
 {
-    $scope.items = [];
+    $scope.list = [];
 
     $scope.getListItems = function ( reload )
     {
-        // Pass true as reload argument to update list
-        $scope.items = new infiniteScroll( "list", reload );
+        if( $scope.list && reload )
+        {
+        	$scope.list.reload();
+        }
+        else
+        {
+	        $scope.list = new infiniteScroll( "/users?p={page}" );
+	    }
     };
 
     // Run on Load

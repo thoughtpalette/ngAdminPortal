@@ -12,26 +12,31 @@ var angMod = angular.module( "vokal", [
     "ngDialog",
     "ui.mask",
     "LocalStorageModule",
-    "infinite-scroll"
+    "infinite-scroll",
+    "vokal.API",
+    "vokal.infiniteScroll"
 ] );
 
 angMod.run( function ( $rootScope, $location, Session )
 {
-
-   $rootScope.$on( "$routeChangeSuccess", function ( ev, data )
-   {
+    $rootScope.$on( "$routeChangeSuccess", function ( ev, data )
+    {
         // Set body class based on controller
         if ( data.$$route && data.$$route.controller )
         {
             $rootScope.controller = data.$$route.controller;
         }
 
-        if( Session.get.authToken() && Session.get.user() && $location.path() === "/login" ) {
+        if( Session.get.authToken() && Session.get.user() && $location.path() === "/login" )
+        {
             $location.path( "/list" );
         }
-   });
+    } );
 
-});
+    toastr.options = {
+        positionClass: "toast-bottom-right"
+    };
+} );
 
 angMod.config( [ "$routeProvider", "$locationProvider", "$sceDelegateProvider",
 
@@ -66,17 +71,17 @@ angMod.config( [ "$routeProvider", "$locationProvider", "$sceDelegateProvider",
 
         $routeProvider
             .when( "/login", {
-                templateUrl: "/build/templates/login.html",
+                templateUrl: "/build/templates/views/login.html",
                 controller: "LoginCtrl"
             } )
             .when( "/list", {
-                templateUrl: "/build/templates/list.html",
+                templateUrl: "/build/templates/views/list.html",
                 controller: "ListCtrl",
                 resolve: requireUser,
                 active: "list"
             } )
             .when( "/infinite-list", {
-                templateUrl: "/build/templates/infinite-list.html",
+                templateUrl: "/build/templates/views/infinite-list.html",
                 controller: "InfiniteListCtrl",
                 resolve: requireUser,
                 active: "infinite-list"
@@ -90,7 +95,7 @@ angMod.config( [ "$routeProvider", "$locationProvider", "$sceDelegateProvider",
         $locationProvider.html5Mode( true ).hashPrefix( "!" );
 
         $sceDelegateProvider.resourceUrlWhitelist(
-            [ "self", "http://*.s3.amazonaws.com/**", "https://*.s3.amazonaws.com/**" ]
+            [ "self" ]
         );
 
     }

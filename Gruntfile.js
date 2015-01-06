@@ -1,17 +1,16 @@
-module.exports = function(grunt)
+module.exports = function( grunt )
 {
-    require( "load-grunt-config" )( grunt,
-    {
+    "use strict";
+
+    require( "load-grunt-config" )( grunt, {
         data: {
             version: grunt.option( "gitver" ) || Date.now(),
-            env: grunt.option( "env" ) || "dev",
-            api: "http://API_URL",
+            APIRoot: grunt.config( "APIRoot" ),
             aws: {
                 accessKeyId: grunt.option( "aws-access-key-id" ),
                 secretAccessKey: grunt.option( "aws-secret-access-key" ),
                 s3Bucket: grunt.option( "aws-s3-bucket" ),
-                cloudfrontDistributionId: grunt.option( "aws-cloudfront-distribution-id" ),
-                region: grunt.option( "aws-region" )
+                cloudfrontDistributionId: grunt.option( "aws-cloudfront-distribution-id" )
             }
         }
     } );

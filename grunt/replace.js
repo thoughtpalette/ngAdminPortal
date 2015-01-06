@@ -1,13 +1,15 @@
+"use strict";
+
 var replacements = [
-        {
-            from: "{{ VERSION }}",
-            to: "<%= version %>"
-        },
-        {
-            from: "{{ API_PATH }}",
-            to: "<%= api %>"
-        }
-    ];
+    {
+        from: "{{ VERSION }}",
+        to: "<%= version %>"
+    },
+    {
+        from: "{{ APIROOT }}",
+        to: "<%= APIRoot %>"
+    }
+];
 
 module.exports = {
     js: {

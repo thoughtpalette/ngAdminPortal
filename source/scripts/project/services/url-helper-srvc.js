@@ -3,7 +3,11 @@ angMod.service( "UrlHelper", [
     {
 
         var urlHelper = {};
+<<<<<<< HEAD
         var pathRoot = "{{ API_PATH }}";
+=======
+        var pathRoot = "{{ APIROOT }}";
+>>>>>>> upstream/master
 
         urlHelper.clientToken = {
             get: function () { return "/v1/token"; }

@@ -9,7 +9,7 @@ module.exports = {
 		files: [
 			"source/scripts/project/**/*"
 		],
-		tasks: [ "concat:scripts", "replace" ]
+		tasks: [ "concat:scripts", "envDev", "replace" ]
 	},
 	styles:
 	{

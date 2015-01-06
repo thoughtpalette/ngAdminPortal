@@ -1,6 +1,6 @@
 module.exports = {
     options: {
-        keepAlive: true,
+        keepAlive: false,
         noColor: false,
         coverageDir: "coverage/protractor",
         args: {

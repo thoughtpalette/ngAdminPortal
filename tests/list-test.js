@@ -1,13 +1,24 @@
 "use strict";
 
-var ptor = protractor.getInstance();
-
 describe( "List View", function ()
 {
+    beforeEach( function ()
+    {
+        var toasts = element.all( by.css( "#toast-container .toast" ) );
+        toasts.count().then( function ( count )
+        {
+            if ( count )
+            {
+                toasts.click();
+                browser.sleep( 500 );
+            }
+        } );
+    } );
+
     it( "Test Redirect", function ()
     {
         // Check Redirect
-        expect(ptor.getCurrentUrl()).toContain( "list" );
+        expect(browser.getCurrentUrl()).toContain( "list" );
 
     } );
 
@@ -87,7 +98,7 @@ describe( "List View", function ()
 
     it( "Open Add Item Modal", function ()
     {
-        ptor.sleep(2000);
+        browser.sleep(2000);
 
         var addItemBtn = element( by.id( "add-item-btn" ) ),
             modalWindow = element( by.css( ".ngdialog" ) );
@@ -152,7 +163,7 @@ describe( "List View", function ()
 
     it( "Open Delete Item Modal", function ()
     {
-        ptor.sleep(2000);
+        browser.sleep(2000);
 
         var deleteButton = element( by.css( ".row-1 .glyphicon-remove" ) ),
             modalWindow = element( by.css( ".ngdialog" ) );
@@ -172,7 +183,7 @@ describe( "List View", function ()
 
     //         deleteButton.click();
 
-    //         ptor.sleep(2000);
+    //         browser.sleep(2000);
 
     //         expect( listItem.isPresent()).toBe( false );
     // } );
