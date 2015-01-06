@@ -3,7 +3,7 @@ default:
   - jshint
   - concat
   - ngtemplates
-  - less:dev
+  - less
   - envDev
   - replace
 
@@ -20,7 +20,7 @@ deploy:
   - concat
   - ngtemplates
   - uglify
-  - less:deploy
+  - less
   - envProd
   - replace
   - s3
