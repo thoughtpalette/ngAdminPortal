@@ -1,15 +1,15 @@
 {
-  "name": "web-admin-seed",
+  "name": "roadhouse",
   "version": "0.1.0",
   "description": "Boiler Plate Admin Portal",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vokalinteractive/web-admin-seed.git"
+    "url": "https://github.com/vokal/roadhouse.git"
   },
   "bugs": {
-    "url": "https://github.com/vokalinteractive/web-admin-seed/issues"
+    "url": "https://github.com/vokal/roadhouse/issues"
   },
-  "homepage": "https://github.com/vokalinteractive/web-admin-seed",
+  "homepage": "https://github.com/vokal/roadhouse",
   "appPath": "source",
   "buildPath": "build",
   "scripts": {
@@ -34,7 +34,7 @@
     "grunt-text-replace": "^0.3.12",
     "load-grunt-config": "^0.13.1",
     "grunt-aws": "^0.4.0",
-    "protractor": "^1.4.0",
+    "protractor": "^1.5.0",
     "grunt-protractor-coverage": "^0.2.13",
     "grunt-istanbul": "^0.3.0",
     "jasmine-reporters": "~1.0.0"
