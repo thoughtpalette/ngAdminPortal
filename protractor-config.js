@@ -6,7 +6,7 @@ exports.config = {
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-        "browserName": "chrome"
+        "browserName": "firefox"
     },
 
     // Prevents a full selenium start-up, much quicker, but only works with Chrome and Firefox
@@ -30,11 +30,5 @@ exports.config = {
         includeStackTrace: true,
         // Default time to wait in ms before a test fails.
         defaultTimeoutInterval: 30000
-    },
-
-    onPrepare: function ()
-    {
-        require( "jasmine-reporters" );
-        jasmine.getEnv().addReporter( new jasmine.JUnitXmlReporter( "coverage/net", true, true ) );
     }
 };
