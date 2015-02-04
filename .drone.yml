@@ -1,4 +1,4 @@
-image: docker.vokalinteractive.com/node-testing
+image: docker.vokal.io/node-testing
 env:
     - AWS_ACCESS_KEY=$$awsAccessKey
     - AWS_SECRET_KEY=$$awsSecretKey
@@ -23,4 +23,4 @@ script:
 notify:
     email:
         recipients:
-            - jarrett.widman@vokalinteractive.com # use specific project maintainers as needed
+            - jarrett.widman@vokal.io # use specific project maintainers as needed
