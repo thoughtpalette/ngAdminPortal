@@ -38,7 +38,7 @@ module.exports = {
             "source/components/at-table/dist/angular-table.js",
             "source/components/ngDialog/js/ngDialog.min.js",
             "source/components/angular-ui-utils/mask.min.js",
-            "source/components/angular-local-storage/angular-local-storage.js",
+            "source/components/angular-local-storage/dist/angular-local-storage.min.js",
             "source/components/ngInfiniteScroll/build/ng-infinite-scroll.min.js",
             "source/components/toastr/toastr.min.js",
             "source/components/humps/humps.js",
