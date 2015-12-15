@@ -3,6 +3,9 @@ Web Admin
 
 Drive-thru Angular admin front end based on angular-seed project.
 
+![](https://github.com/thoughtpalette/ngAdminPortal/blob/master/images/login.png)
+
+![](https://github.com/thoughtpalette/ngAdminPortal/blob/master/images/list-view.png)
 
 ## Getting Started
 
