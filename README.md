@@ -1,4 +1,4 @@
-Roadhouse
+Web Admin
 ==============
 
 Drive-thru Angular admin front end based on angular-seed project.
