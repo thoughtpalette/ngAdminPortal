@@ -39,13 +39,8 @@ module.exports = {
             "source/components/ngDialog/js/ngDialog.min.js",
             "source/components/angular-ui-utils/mask.min.js",
             "source/components/angular-local-storage/dist/angular-local-storage.min.js",
-            "source/components/ngInfiniteScroll/build/ng-infinite-scroll.min.js",
             "source/components/toastr/toastr.min.js",
-            "source/components/humps/humps.js",
-            "source/components/vokal-ng-api/services_humps.js",
-            "source/components/vokal-ng-api/services_API.js",
-            "source/components/vokal-ng-lib/directives/*.js",
-            "source/components/vokal-ng-lib/services/*.js"
+            "source/components/humps/humps.js"
         ],
         dest: "build/components.js"
     },
@@ -53,7 +48,6 @@ module.exports = {
     {
         src: [
             "source/styles/library/reset.css",
-            "source/styles/library/vokal.css",
             "source/components/ngDialog/css/ngDialog.min.css",
             "source/components/ngDialog/css/ngDialog-theme-default.css",
             "source/components/toastr/toastr.min.css"

@@ -1,4 +1,4 @@
-vokal-seed
+Web Admin
 ==========
 
 Save any fonts you need in here.

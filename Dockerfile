@@ -1,4 +1,4 @@
-FROM docker.vokalinteractive.com/node-testing
+FROM docker.nc.com/node-testing
 
 USER testing
 

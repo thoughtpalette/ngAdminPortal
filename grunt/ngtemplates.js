@@ -2,7 +2,7 @@
 
 module.exports = {
     options: {
-        module: "vokal",
+        module: "ncadmin",
         prefix: "/<%= pkg.buildPath %>",
         htmlmin: {
             collapseBooleanAttributes: true,

@@ -1,19 +1,18 @@
 {
-  "name": "roadhouse",
+  "name": "ncadmin",
   "version": "0.1.0",
   "description": "Boiler Plate Admin Portal",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/vokal/roadhouse.git"
+    "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/vokal/roadhouse/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/vokal/roadhouse",
+  "homepage": "",
   "appPath": "source",
   "buildPath": "build",
   "scripts": {
-    "start": "npm install && bower install && grunt && node server",
+    "start": "npm install && bower install --allow-root && grunt && node server",
     "webdriver-update": "node ./node_modules/protractor/bin/webdriver-manager update",
     "karma-test": "node ./node_modules/karma/bin/karma start karma-config",
     "test": "grunt clean:coverage && grunt && npm run webdriver-update && grunt test"

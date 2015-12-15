@@ -1,3 +1,3 @@
 /* Directives */
 
-angular.module( "vokal.directives", [] );
+angular.module( "nc.directives", [] );

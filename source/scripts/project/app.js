@@ -2,19 +2,16 @@
 
 /* App Configuration */
 
-var angMod = angular.module( "vokal", [
+var angMod = angular.module( "ncadmin", [
     "ngRoute",
     "ngTouch",
     "ngSanitize",
-    "vokal.filters",
-    "vokal.directives",
+    "nc.filters",
+    "nc.directives",
     "angular-table",
     "ngDialog",
     "ui.mask",
-    "LocalStorageModule",
-    "infinite-scroll",
-    "vokal.API",
-    "vokal.infiniteScroll"
+    "LocalStorageModule"
 ] );
 
 angMod.run( function ( $rootScope, $location, Session )
@@ -43,8 +40,8 @@ angMod.config( [ "$routeProvider", "$locationProvider", "$sceDelegateProvider",
     function ( $routeProvider, $locationProvider, $sceDelegateProvider )
     {
 
-        var requireUser = { User: [ "$location", "$rootScope", "$q", "API", "Session",
-            function ( $location, $rootScope, $q, API, Session )
+        var requireUser = { User: [ "$location", "$rootScope", "$q", "Session",
+            function ( $location, $rootScope, $q, Session )
             {
                 var deferred = $q.defer();
 
@@ -79,12 +76,6 @@ angMod.config( [ "$routeProvider", "$locationProvider", "$sceDelegateProvider",
                 controller: "ListCtrl",
                 resolve: requireUser,
                 active: "list"
-            } )
-            .when( "/infinite-list", {
-                templateUrl: "/build/templates/views/infinite-list.html",
-                controller: "InfiniteListCtrl",
-                resolve: requireUser,
-                active: "infinite-list"
             } )
             .when( "/logout", {
                 template: " ",

@@ -1,5 +1,5 @@
-angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", "UrlHelper", "API",
-    function ( $scope, $rootScope, $filter, ngDialog, UrlHelper, API )
+angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", "UrlHelper", "$http",
+    function ( $scope, $rootScope, $filter, ngDialog, UrlHelper, $http )
     {
 
         // angular-table config
@@ -12,7 +12,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
 
         $scope.getList = function ()
         {
-            API.$get( UrlHelper.company.getList() )
+            $http.get( UrlHelper.company.getList() )
             .then( function ( data )
             {
                 $scope.list = data.results;
@@ -51,7 +51,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
 
         $scope.updateItem = function ( item )
         {
-            API.$put( UrlHelper.company.update() + item.id, item )
+            $http.put( UrlHelper.company.update() + item.id, item )
             .then( function ( data )
             {
                 $scope.getList();
@@ -64,7 +64,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
 
         $scope.addNewItem = function ( item )
         {
-            API.$post( UrlHelper.company.create(), item )
+            $http.post( UrlHelper.company.create(), item )
             .then( function ( data )
             {
                 $scope.getList();
@@ -100,7 +100,7 @@ angMod.controller( "ListCtrl", [ "$scope", "$rootScope", "$filter", "ngDialog", 
 
         $scope.deleteItem = function ( item )
         {
-            API.$delete( UrlHelper.company.delete() + item.id )
+            $http.delete( UrlHelper.company.delete() + item.id )
             .then( function ( data )
             {
                 $scope.getList();

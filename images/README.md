@@ -1,4 +1,4 @@
-vokal-seed
+Web Admin
 ==========
 
 Save your images in here.

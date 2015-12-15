@@ -1,5 +1,5 @@
-angMod.controller( "LoginCtrl", [ "$scope", "$rootScope", "$location", "API", "UrlHelper", "Session",
-    function ( $scope, $rootScope, $location, API, UrlHelper, Session )
+angMod.controller( "LoginCtrl", [ "$scope", "$rootScope", "$location", "UrlHelper", "Session",
+    function ( $scope, $rootScope, $location, UrlHelper, Session )
 {
     $scope.userResetPassword = false;
     $scope.resetPasswordVisible = false;
@@ -12,7 +12,7 @@ angMod.controller( "LoginCtrl", [ "$scope", "$rootScope", "$location", "API", "U
 
     $scope.login = function ( credentials )
     {
-        // API.$post(UrlHelper.login(),
+        // $http.post(UrlHelper.login(),
         //     {
         //         email: $scope.credentials.email,
         //         password: $scope.credentials.password
@@ -45,7 +45,7 @@ angMod.controller( "LoginCtrl", [ "$scope", "$rootScope", "$location", "API", "U
 
     $scope.sendResetPasswordEmail = function ( user )
     {
-        API.$post( UrlHelper.customer.resetPassword(),
+        $http.post( UrlHelper.customer.resetPassword(),
             {
                 email: user.email
             }

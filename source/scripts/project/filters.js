@@ -1,4 +1,4 @@
 /* Filters */
 
-angular.module( "vokal.filters", [] );
+angular.module( "nc.filters", [] );
 
